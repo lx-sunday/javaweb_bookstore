@@ -8,12 +8,13 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.junit.Test;
 
 import com.javaweb.domain.User;
+import com.javaweb.utils.BeanFactory;
 import com.javaweb.utils.JdbcUtils;
 
 public class JdbcTest {
-	
 	@Test
 	public void findUser(){
+		
 		try {
 			QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
 			String sql="SELECT * from user";
