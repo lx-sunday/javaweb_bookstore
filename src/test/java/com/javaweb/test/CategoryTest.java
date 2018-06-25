@@ -20,14 +20,14 @@ public class CategoryTest {
 		try {
 			Category bean=new Category();
 			bean.setId(WebUtils.makeId());
-			bean.setName("Ó¢ÓïÊé¼®");
-			bean.setDescription("Ó¢ÓïÀàÏà¹ØÊé¼®");
+			bean.setName("è‹±è¯­ä¹¦ç±");
+			bean.setDescription("è‹±è¯­ç±»ç›¸å…³ä¹¦ç±");
 			service.add(bean);
-			System.out.println("Ìí¼Ó³É¹¦");
+			System.out.println("æ·»åŠ æˆåŠŸ");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			System.out.println("Ìí¼ÓÊ§°Ü");
+			System.out.println("æ·»åŠ å¤±è´¥");
 		}
 	}
 	

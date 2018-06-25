@@ -1,25 +1,24 @@
 package com.javaweb.domain;
 
-
 import java.util.List;
 
 public class Page {
 	
-	private int totalpage; //¼Ç×¡×ÜÒ³Êı
-	private int pagesize = 3; //Ò³Ãæ´óĞ¡
-	private int totalrecord; //×Ü¼ÇÂ¼Êı
-	private int pagenum; //¼Ç×¡µ±Ç°Ò³
-	private List list; //¼Ç×¡Ò³ÃæÊı¾İ
-	private int startpage; //ÆğÊ¼Ò³ºÅ
+	private int totalpage; //è®°ä½æ€»é¡µæ•°
+	private int pagesize = 3; //é¡µé¢å¤§å°
+	private int totalrecord; //æ€»è®°å½•æ•°
+	private int pagenum; //è®°ä½å½“å‰é¡µ
+	private List list; //è®°ä½é¡µé¢æ•°æ®
+	private int startpage; //èµ·å§‹é¡µå·
 	private int endpage;
-	private int startindex; //¼Ç×¡ÓÃ»§Ïë¿´µÄ Ò³µÄÊı¾İ´ÓÄÄ¸öµØ·½¿ªÊ¼È¡
+	private int startindex; //è®°ä½ç”¨æˆ·æƒ³çœ‹çš„ é¡µçš„æ•°æ®ä»å“ªä¸ªåœ°æ–¹å¼€å§‹å–
 	
 	public Page(int pagenum, int totalrecord){
 		this.pagenum = pagenum;
 		this.totalrecord = totalrecord;
-		//Ëã³ö×ÜÒ³Êı
+		//ç®—å‡ºæ€»é¡µæ•°
 		this.totalpage = (this.totalrecord + this.pagesize - 1) / this.pagesize;
-		//Ëã³öÓÃ»§Ïë¿´µÄÒ³µÄÊı¾İ´ÓÊı¾İ¿âÄÄ¸öµØ·½¿ªÊ¼È¡
+		//ç®—å‡ºç”¨æˆ·æƒ³çœ‹çš„é¡µçš„æ•°æ®ä»æ•°æ®åº“å“ªä¸ªåœ°æ–¹å¼€å§‹å–
 		this.startindex = (this.pagenum - 1) * this.pagesize;
 		
 		if(this.totalpage <= 3){

@@ -1,6 +1,5 @@
 package com.javaweb.domain;
 
-
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,8 +9,8 @@ public class Order {
 	private Date ordertime;
 	private double price;
 	private boolean state;
-	private User user;//记住订单属于哪个用户   user_id
-	private Set<OrderItem> orderitems = new HashSet<OrderItem>(); //用来保存订单项的集合
+	private User user;//璁颁綇璁㈠崟灞炰簬鍝釜鐢ㄦ埛   user_id
+	private Set<OrderItem> orderitems = new HashSet<OrderItem>(); //鐢ㄦ潵淇濆瓨璁㈠崟椤圭殑闆嗗悎
 	
 	public Set<OrderItem> getOrderitems() {
 		return orderitems;
