@@ -5,7 +5,7 @@ import java.util.List;
 public class Page {
 	
 	private int totalpage; //记住总页数
-	private int pagesize = 3; //页面大小
+	private int pagesize=3; //页面大小，默认大小为3
 	private int totalrecord; //总记录数
 	private int pagenum; //记住当前页
 	private List list; //记住页面数据
@@ -13,32 +13,30 @@ public class Page {
 	private int endpage;
 	private int startindex; //记住用户想看的 页的数据从哪个地方开始取
 	
+	
 	public Page(int pagenum, int totalrecord){
-		this.pagenum = pagenum;
-		this.totalrecord = totalrecord;
-		//算出总页数
-		this.totalpage = (this.totalrecord + this.pagesize - 1) / this.pagesize;
-		//算出用户想看的页的数据从数据库哪个地方开始取
-		this.startindex = (this.pagenum - 1) * this.pagesize;
-		
-		if(this.totalpage <= 3){
-			this.startpage = 1;
-			this.endpage = this.totalpage;
+		this.pagenum=pagenum;
+		this.totalrecord=totalrecord;
+        this.totalpage=(this.totalrecord+pagesize-1)/pagesize;
+        this.startindex=(this.pagenum-1)*pagesize;
+		if(this.totalpage<=3){
+			this.startpage=1;
+			this.endpage=totalpage;
 		}else{
-			this.startpage = pagenum - 1;
-			this.endpage = pagenum + 1;
-			
-			if(this.startpage < 1){
-				this.startpage = 1;
-				this.endpage = 3;
+			this.startpage=pagenum-1;
+			this.endpage=pagenum+1;
+			if(this.startpage<1){
+				this.startpage=1;
+				this.endpage=3;
 			}
-			if(this.endpage > this.totalpage){
-				this.endpage = this.totalpage;
-				this.startpage = this.totalpage - 2;
+			if(this.endpage>this.totalpage){
+				this.endpage=this.totalpage;
+				this.startpage=this.totalpage-2;
 			}
 		}
+		
 	}
-
+	
 	public int getTotalpage() {
 		return totalpage;
 	}

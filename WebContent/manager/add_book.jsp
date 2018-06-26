@@ -7,7 +7,7 @@
   </head>
   
   <body>
-  <form action="${pageContext.request.contextPath }/manager/BookServlet?method=add" method="post" enctype="multipart/form-data">
+  <form action="${pageContext.request.contextPath }/BookServlet?method=save" method="post" enctype="multipart/form-data">
     <table frame="border" width="50%">
     	<tr>
     		<td>图书名称</td>
@@ -43,8 +43,9 @@
     		<td>所属分类</td>
     		<td>
     			<select name="category_id">
-    					<option value="">儿童图书</option>
-    					<option value="">非儿童图书</option>
+    			   <c:forEach items="${cateList}" var="item">
+    			      <option value="${item.id}">${item.name}</option>
+    			   </c:forEach>
     			</select>
     		</td>
     	</tr>
