@@ -4,8 +4,16 @@
     <filter-name>CharactorEncodingFilter</filter-name>
     <filter-class>com.javaweb.filter.CharactorEncodingFilter</filter-class>
   </filter>
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.javaweb.filter.LoginFilter</filter-class>
+  </filter>
   <filter-mapping>
     <filter-name>CharactorEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 </web-app>

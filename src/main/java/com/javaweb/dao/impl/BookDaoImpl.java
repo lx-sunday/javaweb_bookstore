@@ -23,6 +23,7 @@ public class BookDaoImpl implements BookDao {
 			qr.update(sql, params);
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 	}
@@ -40,7 +41,8 @@ public class BookDaoImpl implements BookDao {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			throw new RuntimeException(e);
+			e.printStackTrace();
+			throw new RuntimeException(e); //此处如果抛出异常就不会继续向下执行，除finally代码块外
 		}
 		
 		return total;

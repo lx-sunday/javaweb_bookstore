@@ -64,8 +64,6 @@ public class BookServlet extends HttpServlet {
 		}
 		
 	}
-
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -169,7 +167,7 @@ public class BookServlet extends HttpServlet {
 		return "/images/"+fileName;
 	}
 
-	private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private void add(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		// TODO Auto-generated method stub
 		List<Category> cateList = cService.findAll();
 		request.setAttribute("cateList", cateList);
